@@ -54,7 +54,7 @@ git push -u origin local_branch
 ##  push local branch to specific branch (different branch names) on server
 git push -u origin local_branch:origin/remote_branch
 
-##  update local data on branches at server
+##  update local data regarding branches on server
 git fetch --all
 
 ##  list local & remote branches
@@ -69,6 +69,8 @@ git checkout -b local_branch origin/remote_branch
 ##  merge current local branch with remote branch
 git merge origin/remote_branch
 
+##  delete remote branch
+git push origin -d remote_branch
 
 
 
