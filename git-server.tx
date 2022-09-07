@@ -1,4 +1,12 @@
 
+##  EXPERIMENTS WITH THREE USERS:
+##  user-a setup main branch & repo
+##  user-c downloaded main branch & built a sub-branch off it, pushed to server, made more changes
+##  user-b downloaded & edited sub-branch, downloaded new changes again, merged a conflict, pushed to server
+##  user-a downloaded sub-branch and merged to main, pushed main to server
+##  main branch: https://github.com/spam-a-xza/test/commits/main/git-server.tx
+
+
 ##  GENERAL
 
 ##  edit ~/.gitconfig to avoid main/master initial branch name conflicts
@@ -21,6 +29,7 @@ git config --global credential.helper 'cache --timeout=1'
 
 
 ##  SERVER INITIALISATION VIA SSH
+##  note: no way to verify the server's own ssh pubkey...
 
 ##  get server pubkey for ~/.ssh/known_hosts and check server has client pubkey (after manually via website)
 ssh -T git@git-server.com
@@ -83,7 +92,7 @@ git config --global commit.gpgsign true
 ##  edit ./.git/config to set key to use when signing commits
 git config --local user.signingkey <KEY ID>
 
-##  commit with gpg signature
+##  commit with gpg signature (note: email address of key & config must match, e.g. if using noreply)
 git commit -S -m "about commit"
 
 ##  show signatures in commit log
