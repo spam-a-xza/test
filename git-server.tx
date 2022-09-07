@@ -38,9 +38,22 @@ git remote add origin git@github.com:user/repo
 ##  clone via ssh
 git clone git@git-server.com:user/repo.git
 
-##  specify specific ssh key to use during push
+##  specify specific ssh key to use during push (or use ~/.ssh/config)
 GIT_SSH_COMMAND='ssh -i ~/.ssh/your_key' && export GIT_SSH_COMMAND
 
+
+##  BRANCHES TO/FROM SERVER
+
+##  push local branch to server
+git push -u origin test-branch
+
+##  fetch info about branches from server
+git fetch --all
+
+##  show remote branches
+git branch -r
+
+##  
 
 
 ##  GPG SIGNED COMMITS
