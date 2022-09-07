@@ -53,8 +53,8 @@ git fetch --all
 ##  show remote branches
 git branch -r
 
-##  download a branch to local git
-git checkout -b branch_name
+##  setup local branch to track remote branch
+git branch --track work-by-c-remote origin/work-by-c
 
 
 ##  GPG SIGNED COMMITS
