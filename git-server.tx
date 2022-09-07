@@ -53,7 +53,8 @@ git fetch --all
 ##  show remote branches
 git branch -r
 
-##  
+##  download a branch to local git
+git checkout -b branch_name
 
 
 ##  GPG SIGNED COMMITS
