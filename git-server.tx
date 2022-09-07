@@ -72,8 +72,12 @@ git merge
 ##  merge current local branch with specific remote branch
 git merge origin/remote_branch
 
+##  when git mergetool doesn't work out
+git merge --abort
+
 ##  delete remote branch
 git push origin -d remote_branch
+
 
 
 
@@ -92,6 +96,5 @@ git commit -S -m "about commit"
 git log --show-signature
 
 
-###  conflict!!!
-###wtf
+
 
