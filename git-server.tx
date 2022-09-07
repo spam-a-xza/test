@@ -21,7 +21,7 @@ git remote add origin https://git-server.com/user/repo
 git config credential.username username-here
 
 ##  edit ~/.gitconfig to set credentials cache to disk (due to speculative exec bugs)
-git config --global credential.helper credential-store
+git config --global credential.helper 'store'
 
 ##  store username & API token for credential store at ~/.git-credentials
 https://username:temporary-api-key@git-server.com
