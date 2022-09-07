@@ -6,13 +6,28 @@
 git config --global init.defaultBranch
 
 
+##  SERVER INTERACTIONS
+
+##  view current repo server syncs incl. protocol
+git remote -v
+
+
 ##  SERVER INTERACTIONS VIA HTTP
 
 ##  sync local git with git server repo via http
 git remote add origin https://git-server.com/user/repo
 
-##  set credentials cache for https commits
-git config credential.helper 'cache --timeout=300'
+##  edit ~/.git/config to set default username for http commits
+git config credential.username username-here
+
+##  edit ~/.gitconfig to set credentials cache to disk (due to speculative exec bugs)
+git config --global credential.helper credential-store
+
+##  store username & API token for credential store at ~/.git-credentials
+https://username:temporary-api-key@git-server.com
+
+##  set RAM-based credentials cache timeout for commits (zero due to speculative exec bugs)
+git config credential.helper 'cache --timeout=1'
 
 
 ##  SERVER INTERACTIONS VIA SSH
