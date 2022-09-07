@@ -69,11 +69,14 @@ git checkout -b local_branch origin/remote_branch
 ##  merge current local branch with remote branch, both of same name
 git merge
 
-##  merge current local branch with specific remote branch
-git merge origin/remote_branch
+##  merge local branch with specific remote branch
+git merge local_branch origin/remote_branch
 
 ##  when git mergetool doesn't work out
 git merge --abort
+
+##  merge two local branches
+git merge local_branch local_branch2
 
 ##  delete remote branch
 git push origin -d remote_branch
