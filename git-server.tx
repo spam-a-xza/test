@@ -1,19 +1,43 @@
 
-##  initially synchronise local git repo with git server repo
 
+##  GENERAL
 
-
-
-##  edit ~/.gitconfig to avoid main/master initial branch conflicts
+##  edit ~/.gitconfig to avoid main/master initial branch name conflicts
 git config --global init.defaultBranch
 
 
+##  SERVER INTERACTIONS VIA HTTP
 
-##  set key to use when signing commits
-git config user.signingkey <KEY ID>
+##  sync local git with git server repo via http
+git remote add origin https://git-server.com/user/repo
+
+##  set credentials cache for https commits
+git config credential.helper 'cache --timeout=300'
+
+
+##  SERVER INTERACTIONS VIA SSH
+
+##  get server pubkey for ~/.ssh/known_hosts and check server has key
+ssh -T git@git-server.com
+
+## sync local git with git server repo via ssh (after adding pubkey to server)
+git remote add origin git@github.com:user/repo
+
+##  clone via ssh
+git clone git@git-server.com:user/repo.git
+
+
+
+##  GPG SIGNED COMMITS
 
 ##  edit ~/.gitconfig to set commits to always be signed
 git config --global commit.gpgsign true
+
+##  edit ./.git/config to set key to use when signing commits
+git config --local user.signingkey <KEY ID>
+
+##  commit with gpg signature
+git commit -S -m "about commit"
 
 ##  show signatures in commit log
 git log --show-signature
