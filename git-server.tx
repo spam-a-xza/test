@@ -66,7 +66,10 @@ git log remote/branch
 ##  create new branch, based on remote branch
 git checkout -b local_branch origin/remote_branch
 
-##  merge current local branch with remote branch
+##  merge current local branch with remote branch, both of same name
+git merge
+
+##  merge current local branch with specific remote branch
 git merge origin/remote_branch
 
 ##  delete remote branch
@@ -89,3 +92,4 @@ git commit -S -m "about commit"
 git log --show-signature
 
 
+###  conflict!!!
