@@ -1,0 +1,20 @@
+
+##  initially synchronise local git repo with git server repo
+
+
+
+
+##  edit ~/.gitconfig to avoid main/master initial branch conflicts
+git config --global init.defaultBranch
+
+
+
+##  set key to use when signing commits
+git config user.signingkey <KEY ID>
+
+##  edit ~/.gitconfig to set commits to always be signed
+git config --global commit.gpgsign true
+
+##  show signatures in commit log
+git log --show-signature
+
